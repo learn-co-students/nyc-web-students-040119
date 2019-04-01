@@ -1,3 +1,11 @@
+require 'pry'
+
+name = "ali"
+
+
+
+other_name = "sebastian"
+
 def game_hash
   {
     home: {
@@ -115,4 +123,37 @@ def game_hash
       ]
     }
   }
+end
+
+def doubler(arr)
+  # results = []
+  #
+  # arr.each do |num|
+  #   results << num * 2
+  # end
+  #
+  # results
+
+  arr.map do |num|
+    num * 2
+  end
+end
+
+# define a method called get_instructor_names
+# it will receive an array of instructors that looks like this
+# instructors = [{name: 'sebastian', mood: 'happy'}, {name: 'ali', mood: 'ecstatic'}, {name: 'alex', mood: 'upbeat'}]
+# it should return
+# an array of strings of just the names ["sebastian", "ali", "alex"]
+
+def get_all_players
+  binding.pry
+end
+
+def num_points_scored(player_name)
+  # look through all the players
+  players = get_all_players
+  # look for the player who's name matches the name we're given
+
+  # return that players points
+
 end

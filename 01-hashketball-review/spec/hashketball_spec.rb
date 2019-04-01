@@ -1,5 +1,5 @@
 require 'spec_helper'
-
+puts "WE ARE IN THE SPEC"
 describe 'hashketball' do
 
   describe '#game_hash' do
