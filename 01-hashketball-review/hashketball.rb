@@ -145,15 +145,48 @@ end
 # it should return
 # an array of strings of just the names ["sebastian", "ali", "alex"]
 
+# MAP
+# we use map when we have an array of n things
+# and we want to get back n things
+# with each one transformed in some way
+
+# SELECT
+# we use select when we have an array of n things
+# and we want to get back some subset of those things
+# the ones that pass the 'test'
+
+def get_instructor_names(instructors)
+  instructors.map do |instructor|
+    instructor[:name]
+  end
+end
+
+get_instructor_names([{name: 'sebastian', mood: 'happy'}, {name: 'ali', mood: 'ecstatic'}, {name: 'alex', mood: 'upbeat'}])
+
 def get_all_players
-  binding.pry
+  game_hash.values.map do |team_info|
+    team_info[:players]
+  end.flatten
 end
 
 def num_points_scored(player_name)
   # look through all the players
   players = get_all_players
   # look for the player who's name matches the name we're given
+  players.find do |player|
+    player[:player_name] == player_name
+  end[:points]
+
 
   # return that players points
 
+end
+
+def shoe_size(player_name)
+  # look through all the players
+  players = get_all_players
+  # look for the player who's name matches the name we're given
+  players.find do |player|
+    player[:player_name] == player_name
+  end[:shoe]
 end
