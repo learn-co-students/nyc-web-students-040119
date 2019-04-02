@@ -6,10 +6,26 @@ aka: Object Oriented Programming (OOP)
 
 ## Lecture Notes
 
-# What is an object
-*
+Everything is an object in Ruby
 
-*
+"object oriented" language
+encapsulation
+things have their definitions / methods
+
+call a method on it
+
+type, things are different types of things
+
+object might have its own scope
+what data we have access to
+
+# What is an object
+* Encapsulates behavior
+
+* Encapsulates state (data that makes up an object)
+
+Behavior + Data together in one object
+
 
 Does the following meet those properties?
 
