@@ -26,7 +26,8 @@ player = {
 poodr = Book.new('practical object oriented design in ruby','sandi metz')
 calvin_and_hobbes = Book.new('the essential calvin and hobbes', 'bill watterson')
 
-# puts poodr.cover_page
+puts poodr.cover_page
+puts calvin_and_hobbes.cover_page
 
 binding.pry
 # 'bye'
