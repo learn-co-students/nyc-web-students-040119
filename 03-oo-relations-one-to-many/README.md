@@ -9,26 +9,49 @@ Intro to OO Relations
 
 #### Where we've been
 
+class Student
+
+class Batch
+
+ferris = Student.new('ferris')
+will = Student.new('will')
+danielle = Student.new('danielle')
+
+ferris.batch
+=> "nyc-web-040119"
+
+batch = Batch.new('nyc-web-career-040119')
+
+
+batch.students
+=> ["ferris", "will", "danielle"]
 
 #### Where we'll be from here on out
 
 
+batch.students
+=> [<Student @name="ferris">, <Student @name = "will">, ...]
 
+will.batch
+=> <Batch @name="nyc-web-040119">
 
 
 #### Define terminology
-  * Model
+  * Model -> Class that's primary role is to store data
 
-  * Domain / Domain Modeling
+    Lesson (a model)
+    Student ( a model)
+    GithubRepoSyncer (class, not a model, service object)
 
+  * Domain / Domain Modeling -> Subject Matter of our App
 
-  * Schema
 
   * Deliverables
-  * User Stories
 
 
 ### Deliverables
+# TODO do this one
+* `Tweet#username` that returns the username of the tweet's user
 
 * Create a User class. The class should have these methods:
   * `#initialize` which takes a username and has a reader method for the username
@@ -39,4 +62,3 @@ Intro to OO Relations
   * `Tweet#message` that returns a string
   * `Tweet#user` that returns an instance of the user class
   * `Tweet.all` that returns all the Tweets created.
-  * `Tweet#username` that returns the username of the tweet's user
