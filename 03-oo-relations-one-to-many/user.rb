@@ -12,7 +12,9 @@ class User
 
     # Look thru all of the tweets in the "database"
     # "choose" the tweets that belong to this user
-    # Tweet.all.
+    Tweet.all.select do |tweet|
+      tweet.user == self
+    end
   end
 
   def post_tweet(message)
