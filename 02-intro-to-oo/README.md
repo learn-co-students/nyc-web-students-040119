@@ -27,7 +27,7 @@ what data we have access to
 Behavior + Data together in one object
 
 
-Does the following meet those properties?
+Does the following meet those properties? kind of
 
 player = {
   player_name: "Alan Anderson",

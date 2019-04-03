@@ -169,17 +169,19 @@ def get_all_players
   end.flatten
 end
 
+def find_player(players, name)
+  players.find do |player|
+    player[:player_name] == name
+  end
+end
+
 def num_points_scored(player_name)
   # look through all the players
-  players = get_all_players
+  players = get_all_players #
   # look for the player who's name matches the name we're given
-  players.find do |player|
-    player[:player_name] == player_name
-  end[:points]
+  player = find_player(players, player_name)
 
-
-  # return that players points
-
+  player[:points]
 end
 
 def shoe_size(player_name)

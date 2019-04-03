@@ -1,6 +1,6 @@
 # POST LECTURE Stretch Task
 
-Define a method `Book.all` that works like this:
+Define a class method `Book.all` that works like this:
 
 ```ruby
 Book.new('the master and margarita', 'mikhail bulgakov')

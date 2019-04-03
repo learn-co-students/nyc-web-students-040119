@@ -28,5 +28,3 @@
   * `rspec --fail-fast` handle one error at a time
   * Red, Green, Refactor
   * Make it work (shameless green), make it right, make it fast
-
----
