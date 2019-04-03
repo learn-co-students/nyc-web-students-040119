@@ -3,16 +3,20 @@ class User
 
   def initialize(username)
     @username = username
-    @tweets = []
+    # @tweets = []
   end
 
   def tweets
-    @tweets
+    # Go ask the Tweet model a question
+    # "querying" our database (asking a question)
+
+    # Look thru all of the tweets in the "database"
+    # "choose" the tweets that belong to this user
+    # Tweet.all.
   end
 
   def post_tweet(message)
     tweet = Tweet.new(message, self)
-    @tweets << tweet
   end
 
 end

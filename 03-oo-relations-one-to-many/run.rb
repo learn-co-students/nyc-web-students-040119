@@ -8,5 +8,8 @@ tea_uncle = User.new('tea_uncle')
 
 coffee_dad.post_tweet('coffee#')
 tea_uncle.post_tweet('#tea')
+coffee_dad.post_tweet('more coffee')
+coffee_dad.post_tweet('im sad')
+tea_uncle.post_tweet('earl #gray')
 
 binding.pry
