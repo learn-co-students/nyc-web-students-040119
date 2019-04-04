@@ -15,10 +15,13 @@ class User
     Tweet.all.select do |tweet|
       tweet.user == self
     end
+    # Colony.all.select do |colony|
+    #   colony.alien == self
+    # end
   end
 
   def post_tweet(message)
-    tweet = Tweet.new(message, self)
+    Tweet.new(message, self)
   end
 
 end
