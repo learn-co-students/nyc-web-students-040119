@@ -20,8 +20,11 @@ class Alien
 
   def planets
     # return all of the planets this alien has colonies on
-    # alien has mnay planets through colonies
+    # alien has many planets through colonies
 
+    self.colonies.map do |colony|
+      colony.planet
+    end
   end
 
 end

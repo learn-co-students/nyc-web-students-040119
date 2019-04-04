@@ -27,7 +27,13 @@ pluto = Planet.new('pluto')
 
 humans.colonize_planet(earth)
 humans.colonize_planet(mars)
+humans.colonize_planet(pluto)
+
 bird_peeps.colonize_planet(pluto)
+bird_peeps.colonize_planet(earth)
+
 omochros.colonize_planet(mars)
+
+# humans.planets
 
 binding.pry
