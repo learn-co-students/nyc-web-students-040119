@@ -1,10 +1,12 @@
 require_relative 'spec_helper.rb'
+require 'pry'
 
 describe Dog do
 
   let(:dog) { Dog.new("Daisy") }
 
   it "can initialize a dog" do
+    # binding.pry
     expect(dog).to be_a(Dog)
   end
 

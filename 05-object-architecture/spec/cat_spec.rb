@@ -5,6 +5,8 @@ describe Cat do
   let(:cat) { Cat.new("crookshanks") }
 
   it "can initialize a cat" do
+    garfield = Cat.new("garfield")
+    binding.pry
     expect(cat).to be_a(Cat)
   end
 
