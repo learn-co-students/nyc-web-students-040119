@@ -1,6 +1,10 @@
 ## Object Relational Mapper (ORM)
 
 + Definition:
+ORM
+O -> Object Oriented Programming (Ruby)
+R -> Relational Databases (SQL)
+M -> mapping back and forth between
 
 ## Active Record Pattern
 - Remind me to define this tomorrow

@@ -10,7 +10,9 @@ class TweetsApp
     message = gets.chomp
 
     tweet = Tweet.new({'user_id' => user_id, 'message' => message})
+
     tweet.save
+
 
     tweets = Tweet.all
     render(tweets)
