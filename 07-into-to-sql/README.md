@@ -6,6 +6,45 @@ Intro to SQL
 
 ### Things we can do to data:
 
+* Create
+create
+
+* Read
+read
+search
+sort
+group
+filter
+
+* Update
+update
+mutate
+
+* Delete / Destroy
+delete
+
+
+CRUD
+
+
+## SQL
+
+Structured Query Language
+
+Relational Database
+sqlite
+mysql
+oracle
+postgreql
+
+Non-Relational Databases NoSQL
+MongoDB, Firebase
+
+
+
+
+
+
 
 
 1. Install the SQLite Browser if you haven't already [here](http://sqlitebrowser.org/)
@@ -19,32 +58,38 @@ Intro to SQL
 
 Which part of CRUD?
 
-```SQL
+Read
 
+```SQL
+SELECT * FROM artists;
 ```
 
 2. Write the SQL to select the artist with the name "Black Sabbath"
 
 ```SQL
-
+SELECT * FROM artists WHERE name = "Black Sabbath";
 ```
 
 3. Write the SQL to create a table named 'fans' with an autoincrementing ID that's a primary key and a name field of type text
 
 ```sql
-
+CREATE TABLE fans (id INTEGER PRIMARY KEY, name TEXT)
 ```
 
 4. Write the SQL to alter the fans table to have a artist_id column type integer?
 
 ```sql
-
+ALTER TABLE fans ADD COLUMN artist_id INTEGER;
 ```
 
 5. Write the SQL to add yourself as a fan of the Black Eyed Peas? artists.id **169**
 CRUD?
+
 Create
+Fan.new
+
 ```sql
+INSERT INTO fans (name, artist_id) VALUES ("Aelx", 169)
 
 ```
 
@@ -64,14 +109,23 @@ Create
 
 
 ```sql
-
+SELECT artists.name, albums.title
+FROM artists
+JOIN albums
+ON albums.artist_id = artists.id;
 
 ```
 
-9. Write the SQL to display artist name, album name and number of tracks on that album
+9. Write the SQL to display artist name, album Title and number of tracks on that album
 
 ```sql
-
+SELECT artists.name, albums.title, COUNT(tracks.id)
+FROM artists
+JOIN albums
+ON albums.artist_id = artists.id
+JOIN tracks
+ON tracks.album_id = albums.id
+GROUP BY (tracks.album_id);
 ```
 
 10. Write the SQL to return the name of all of the artists in the 'Pop' Genre
