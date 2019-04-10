@@ -64,17 +64,71 @@ SELECT * FROM books JOIN authors ON authors.id = books.author_id WHERE authors.n
 
 2. Books and Authors where each book can have one or multiple authors. Books should have a title and authors should have a name
 
+Book has many book_authors
+Book has many authors through book_authors
+
+Author has many book_authors
+Author has many books through book_authors
+
+BookAuthor belongs to author
+BookAuthor belongs to book
+
+books
+id | title                                           
+1   Practical Object Oriented Design in Ruby (POODR)   
+2   Secrets of the JS Ninja                            
+3   99 Bottles of OOP   
+4   JS + Ruby Together                               
+
+book_authors
+id | book_id | author_id
+1     1         12
+2     2         13
+3     3         12
+4     4         12
+5     4         13
+
+authors
+id | name         
+12   Sandi Metz                  
+13  John Resig   
+
 
 Q: Write the SQL to find all books written by a certain author given their name
 
+SELECT * FROM books
+JOIN book_authors ON books.id = book_authors.book_id
+JOIN authors ON authors.id = book_authors.authors_id
+WHERE authors.name = "Wahtever Name"
+
 
 3. Twitter where Tweets can have Tags (i.e. '#fun', '#hottake', '#tbt'). A tweet can have multiple tags, many tweets can be tagged with the same tag. Tweets have a message and user_id; tags have a name.
+
+tweets
+id | message
+1    "wow #learnlovecode"
+2    "wow #fun"
+3    "wowwww #learnlovecode #fun"
+
+tags
+id | name
+10    "#learnlovecode"
+11    "#fun"
+
+tweet_tags
+id | tweet_id | tag_id
+1       1       10
+2       2       11
+3       3       10
+4       3       11
 
 
 Q: Write the SQL to find all the tweets tagged '#tbt'
 
 
 4. After completing the questions above, is there a rule you can determine about which table the foreign key belongs on given two associated tables?
+
+FK goes on the belongs_to
 
 
 
