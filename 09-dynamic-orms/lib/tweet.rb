@@ -1,7 +1,7 @@
 class Tweet < ActiveRecord::Base
 
-  # belongs_to :user
-  def user
-    # .where, .find, .find_by
-  end
+  belongs_to :user
+  # def user
+  #   User.find_by(id: self.user_id)
+  # end
 end
