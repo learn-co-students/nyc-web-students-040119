@@ -2,6 +2,15 @@ Active Record
 ======================
 ## Lecture Notes
 
+Squirrel
+id | name | color | eye_color | temperament |
+
+SquirrelNest
+id | tree_id | squirrel_id
+
+
+Trees
+
 ### Rake and File Structure
 
 - Rake
