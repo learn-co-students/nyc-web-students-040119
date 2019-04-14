@@ -10,6 +10,8 @@ id | tree_id | squirrel_id
 
 
 Trees
+id | species |  
+
 
 ### Rake and File Structure
 
