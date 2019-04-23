@@ -20,12 +20,11 @@ class RapperController < ApplicationController
 
 
   post "/rappers" do
-    binding.pry
     @rapper = Rapper.create(params)
     redirect "/rappers/#{@rapper.id}"
   end
 
-  #Create an Update and Delete 
+  #Create an Update and Delete
   #For Update:
     # - you need a form
     #   - form should populate with the current rapper's information
