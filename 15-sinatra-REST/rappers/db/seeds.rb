@@ -1,0 +1,7 @@
+Rapper.create!(name: "Nas")
+Rapper.create!(name: "Run the Jewels")
+Rapper.create!(name: "Wiz Khalifa")
+Rapper.create!(name: "Biggie")
+Rapper.create!(name: "Drake")
+Rapper.create!(name: "Shai360")
+Rapper.create!(name: "Machine Gun Kelly")
