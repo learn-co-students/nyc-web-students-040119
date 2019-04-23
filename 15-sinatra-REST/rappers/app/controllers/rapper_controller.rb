@@ -25,7 +25,7 @@ class RapperController < ApplicationController
     redirect "/rappers/#{@rapper.id}"
   end
 
-  #Create and Update and Delete 
+  #Create an Update and Delete 
   #For Update:
     # - you need a form
     #   - form should populate with the current rapper's information
