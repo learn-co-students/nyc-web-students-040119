@@ -1,0 +1,7 @@
+<h1>Welcome to <%=@rapper.name%>'s Page</h1>
+
+
+<form action="/rappers/<%=@rapper.id%>" method="post">
+    <input type="hidden" name="_method" value="delete" />
+    <input type="submit" value="Delete this Rapper" />
+</form>

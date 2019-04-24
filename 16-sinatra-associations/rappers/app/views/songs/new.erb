@@ -1,0 +1,16 @@
+<h1>Songs New </h1>
+
+<form action="/songs" method="POST">
+  <input type="text" name="song[title]" placeholder="title"  />
+
+
+  <select name="song[rapper_id]">
+    <%@rappers.each do |rapper|%>
+    <option value="<%=rapper.id%>"><%=rapper.name%></option>
+    <%end%>
+  </select>
+
+
+
+      <input type="submit" value="submit rapper" />
+</form>

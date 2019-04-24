@@ -1,0 +1,5 @@
+<form action="/rappers/<%=@rapper.id%>" method="post">
+  <input type="hidden" name="_method" value="patch" />
+  <input type="text" name="name" value="<%=@rapper.name%>" />
+  <input type="submit" value="submit" />
+</form>

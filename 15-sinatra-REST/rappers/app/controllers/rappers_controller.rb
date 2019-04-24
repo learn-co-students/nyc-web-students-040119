@@ -1,4 +1,4 @@
-class RapperController < ApplicationController
+class RappersController < ApplicationController
 
   # index action
     get "/rappers" do
