@@ -8,13 +8,13 @@ class RappersController < ApplicationController
 def swag
 
 end
-
 # # index in Sinatra
 #   get '/rappers' do
 #
 #   end
 
 def new
+  @rapper = Rapper.new
 end
 
 def show
@@ -22,6 +22,7 @@ end
 
 
 def edit
+  @rapper = Rapper.find(params[:id])
 end
 
 def update
