@@ -1,0 +1,27 @@
+<h1>Rappers#new</h1>
+
+<!-- #csrf
+
+HTML Form -->
+<!-- <form action="/rappers" method="POST" >
+  <input  type="text" name="rapper[name]" placeholder="enter rapper name"/>
+  <input type="number" name="rapper[age]" placeholder="enter rapper age" />
+  <input type="submit" value="submit rapper"/>
+</form> -->
+
+Form Tag
+<%=form_tag rappers_path do %>
+  <%= text_field_tag "rapper[name]" %>
+  <%= text_field_tag "rapper[swag]" %>
+  <%= number_field_tag "rapper[age]" %>
+  <%= submit_tag "submit" %>
+
+<%end%>
+
+Form For
+<%= form_for @rapper do |f|%>
+  <%= f.text_field :name %>
+  <%= f.number_field :age %>
+  <%= f.submit %>
+
+<%end%>
