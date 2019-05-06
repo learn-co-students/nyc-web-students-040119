@@ -1,0 +1,14 @@
+<h1>Songs New</h1>
+
+<% if flash[:notice] %>
+  <h2><%= flash[:notice] %></h2>
+<% end %>
+
+<%= form_for @song do |f| %>
+  <%= f.label "title" %>
+  <%= f.text_field "title"%>
+  <%= f.label "duration"%>
+  <%= f.number_field "duration"%>
+ <%= f.collection_select(:rapper_id, @rappers, :id, :name)%>
+  <%= f.submit "submit"%>
+<%end%>

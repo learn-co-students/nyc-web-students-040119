@@ -1,0 +1,14 @@
+<h1>Create Pet</h1>
+
+<% if flash[:message] %>
+  <h2><%=flash[:message]%></h2>
+<%end%>
+
+<%=form_for @pet do |f|%>
+  <%=f.label :name%>
+  <%=f.text_field :name %>
+  <%=f.label :animal_type%>
+  <%=f.text_field :animal_type %>
+  <%=f.collection_select(:owner_id, @owners, :id, :full_name)%>
+  <%=f.submit%>
+<%end%>

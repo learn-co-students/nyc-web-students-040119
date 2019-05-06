@@ -1,0 +1,10 @@
+<%=@user.name%>'s Profile
+
+<ul>
+
+  <%@user.rappers.each do |rapper|%>
+    <li>
+      <%=rapper.name%>
+    </li>
+  <%end%>
+</ul>
