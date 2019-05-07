@@ -1,0 +1,7 @@
+<h1>Hello <%=@user.name%></h1>
+
+<ul>
+  <%@rappers.each do |rapper|%>
+  <li><%= link_to rapper.name, rapper %></li>
+  <%end%>
+</ul>

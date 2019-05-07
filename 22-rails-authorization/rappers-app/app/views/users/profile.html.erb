@@ -1,0 +1,14 @@
+<%=@user.name%>'s Profile
+
+
+<% if @user.id === current_user.id %>
+  <h3>Waddup Dawg</h3>
+<%end%>
+
+<ul>
+  <%@user.rappers.each do |rapper|%>
+    <li>
+      <%=rapper.name%>
+    </li>
+  <%end%>
+</ul>
