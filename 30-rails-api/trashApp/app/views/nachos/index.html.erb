@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Nachos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Tasty</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @nachos.each do |nacho| %>
+      <tr>
+        <td><%= nacho.name %></td>
+        <td><%= nacho.tasty %></td>
+        <td><%= link_to 'Show', nacho %></td>
+        <td><%= link_to 'Edit', edit_nacho_path(nacho) %></td>
+        <td><%= link_to 'Destroy', nacho, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Nacho', new_nacho_path %>
