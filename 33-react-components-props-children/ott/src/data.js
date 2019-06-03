@@ -1,8 +1,7 @@
-module.exports = {
+export default {
   current_user: {
     username: "Galilawyn",
-    profile_picture: "",
-    active_channel: "#rivers"
+    profile_picture: ""
   },
   channels: [
     {
@@ -19,6 +18,7 @@ module.exports = {
     },
     {
       name: "#rivers",
+      selected: true,
       messages: [
         {
           user: {
@@ -57,4 +57,4 @@ module.exports = {
       messages: []
     }
   ]
-};
+}
