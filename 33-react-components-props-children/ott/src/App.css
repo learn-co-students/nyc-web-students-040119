@@ -1,0 +1,30 @@
+body {
+  width: 80vw;
+  margin: auto;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 0.5fr 1.5fr;
+  grid-template-rows: 0.7fr 2fr 0.3fr;
+  grid-template-areas: "profile messages_container" "channels_list messages_container" "channels_list message_compose";
+}
+
+.channels_list { grid-area: channels_list; }
+
+.profile { grid-area: profile; }
+
+.messages_container { grid-area: messages_container; }
+
+.message_compose { grid-area: message_compose; }
+
+.user_img { width: 5rem; height: 5rem; }
+
+.message {
+  display: flex;
+  margin: 1rem;
+}
+
+.message .user_img {
+  margin-right: 1rem;
+}

@@ -2,10 +2,10 @@ import React from 'react';
 
 class Profile extends React.Component {
   render() {
-    console.log('Profile user', this.props.user);
     return (
-      <div>
-        <img src={this.props.user.profile_picture} />
+      <div className="profile">
+        <h1>Ott</h1>
+        <img className="user_img" src={this.props.user.profile_picture} alt={this.props.user.username}/>
         <p>{this.props.user.username}</p>
       </div>
     )

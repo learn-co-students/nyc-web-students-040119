@@ -5,11 +5,10 @@ import ChannelsList from './ChannelsList';
 
 class NavigationContainer extends Component {
   render() {
-    console.log('NavigationContainer user', this.props.user);
     return (
       <div>
-        <Profile user={this.props.user} />
-        <ChannelsList />
+        <Profile user={this.props.current_user} />
+        <ChannelsList channels={this.props.channels_list} />
       </div>
     )
   }
