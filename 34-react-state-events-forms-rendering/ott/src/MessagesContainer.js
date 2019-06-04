@@ -2,9 +2,43 @@ import React from 'react';
 import Message from './Message'
 
 class MessagesContainer extends React.Component {
-  render() {
+  constructor(props) {
+    super(props)
 
-    const messageLis = this.props.messages.map(function(message) {
+    this.state = {
+      message: "",
+      messages: [...props.messages]
+    }
+  }
+
+  handleChange = (event) => {
+
+    this.setState({
+      message: event.target.value
+    })
+  }
+
+  handleSubmit = (event) => {
+    event.preventDefault();
+
+    const messageObj = {
+      user: this.props.currentUser,
+      message: {
+        // id: 3,
+        // sent: "some-date",
+        text: this.state.message
+      }
+    }
+
+    this.setState({
+      messages: [...this.state.messages, messageObj],
+      message: ""
+    })
+
+  }
+
+  render() {
+    const messageLis = this.state.messages.map(function(message) {
       return <Message key={message.message.id} user={message.user} text={message.message.text} />
     })
 
@@ -14,15 +48,21 @@ class MessagesContainer extends React.Component {
         <ul className="messages_container_list">
           {messageLis}
         </ul>
-        <div className="messages_container_compose">
+        <form className="messages_container_compose" onSubmit={this.handleSubmit}>
           <label htmlFor="new_file">↑</label>
           <input type="file"
             style={{display: 'none'}}
             id="new_file" name="new_file"
             accept="image/png, image/jpeg" />
-          <input type="text" name="new_message_text" placeholder={`Message ${this.props.channelName}`}/>
+          <input
+            type="text"
+            name="new_message_text"
+            placeholder={`Message ${this.props.channelName}`}
+            onChange={this.handleChange}
+            value={this.state.message}
+          />
           <input type="submit" />
-        </div>
+        </form>
       </div>
     )
   }

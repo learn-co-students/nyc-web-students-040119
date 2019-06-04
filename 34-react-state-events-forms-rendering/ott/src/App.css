@@ -1,14 +1,22 @@
 body {
-  width: 80vw;
   margin: auto;
+  background-color: #eee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: arial;
 }
 
 .grid-container {
+  width: 80vw;
+  background-color: white;
+  padding: 1rem;
   /* border: 3px solid limegreen; */
   margin: 3px;
   display: grid;
   grid-template-columns: 0.6fr 1.4fr;
-  grid-template-rows: 1fr;
+  grid-template-rows: 0.8fr;
   grid-template-areas: "navigation_container messages_container";
 }
 
@@ -18,7 +26,7 @@ body {
   margin: 3px;
   display: grid;
   grid-template-columns: ;
-  grid-template-rows: 0.5fr 2.1fr;
+  grid-template-rows: 0.5fr 1.5fr;
   grid-template-areas: "navigation_profile" "navigation_channels_list";
 }
 
@@ -30,7 +38,7 @@ body {
 
 .navigation_channels_list {
   grid-area: navigation_channels_list;
-  border: 3px solid orange;
+  /* border: 3px solid orange; */
   margin: 3px;
 }
 
@@ -41,7 +49,7 @@ body {
 
 .messages_container {
   grid-area: messages_container;
-  /* border: 3px solid tan; */
+  border: 3px solid tan;
   margin: 3px;
   display: grid;
   grid-template-columns: ;

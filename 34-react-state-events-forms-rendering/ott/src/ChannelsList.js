@@ -37,9 +37,16 @@ class ChannelsList extends React.Component {
     })
   }
 
+  // handleChannelChange = (event) => {
+  //   console.log(event.target.id);
+  // }
+
   render() {
-    const channelLis = this.state.channels.map(function(channel) {
-      return <li key={channel.name}><button>{channel.name}</button></li>
+    const channelLis = this.state.channels.map((channel) => {
+      return <li
+        key={channel.name}
+        onClick={this.props.handleChannelChange}
+        ><button id={channel.name}>{channel.name}</button></li>
     })
 
     return (
