@@ -2,7 +2,25 @@ import React from 'react';
 import Message from './Message'
 
 class MessagesContainer extends React.Component {
+  state = {
+    message: ""
+  }
+
+  handleChange = (event) => {
+    this.setState({
+      message: event.target.value
+    })
+  }
+
+  handleSubmit = (event) => {
+    event.preventDefault()
+
+    this.props.addMessage(this.state.message)
+  }
+
   render() {
+    console.log('MessagesContainer state', this.state);
+
     const messageLis = this.props.messages.map(function(message) {
       return <Message key={message.message.id} user={message.user} text={message.message.text} />
     })
@@ -22,6 +40,7 @@ class MessagesContainer extends React.Component {
           <input
             type="text"
             name="new_message_text"
+            onChange={this.handleChange}
             placeholder={`Message ${this.props.channelName}`}
           />
           <input type="submit" />

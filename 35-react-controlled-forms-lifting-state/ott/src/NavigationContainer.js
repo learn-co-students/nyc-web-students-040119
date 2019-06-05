@@ -8,7 +8,10 @@ class NavigationContainer extends Component {
     return (
       <div className="navigation_container">
         <Profile user={this.props.current_user} />
-        <ChannelsList channels={this.props.channels_list} />
+        <ChannelsList
+          addChannel={this.props.addChannel}
+          channels={this.props.channels_list}
+          selectChannel={this.props.selectChannel} />
       </div>
     )
   }
