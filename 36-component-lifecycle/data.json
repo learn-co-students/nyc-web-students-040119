@@ -1,0 +1,37 @@
+{
+  "wallet": {
+    "balance": 20
+  },
+  "snacks": [
+    {
+      "id": 1,
+      "name": "fish",
+      "quantity": 3,
+      "price": 2.3
+    },
+    {
+      "id": 2,
+      "name": "clam",
+      "quantity": 3,
+      "price": 1.8
+    },
+    {
+      "id": 3,
+      "name": "squid",
+      "quantity": 3,
+      "price": 5.4
+    },
+    {
+      "id": 4,
+      "name": "crab",
+      "quantity": 3,
+      "price": 0.25
+    },
+    {
+      "id": 5,
+      "name": "shrimp",
+      "quantity": 3,
+      "price": 7
+    }
+  ]
+}
