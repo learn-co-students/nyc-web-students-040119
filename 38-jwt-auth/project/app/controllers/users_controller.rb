@@ -15,9 +15,8 @@ class UsersController < ApplicationController
 
   def profile
     # HOW DO WE GET THE USER ID?
-    user = User.find(user_id)
 
-    render json: user
+    render json: current_user
   end
 
   private
