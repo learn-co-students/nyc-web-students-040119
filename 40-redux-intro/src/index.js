@@ -15,17 +15,49 @@ function reducer(state = defaultState, action) {
 
       return {
         ...state,
-        count: state.count + 1
+        count: state.count + action.count
       }
       break;
     case "DECREMENT_COUNT":
 
       return {
         ...state,
-        count: state.count - 1
+        count: state.count - action.count
       }
 
       break;
+    // case "INCREMENT_COUNT_3":
+    //   // state = {count: 1}
+    //
+    //   return {
+    //     ...state,
+    //     count: state.count + 3
+    //   }
+    //   break;
+    // case "DECREMENT_COUNT_3":
+    //
+    //   return {
+    //     ...state,
+    //     count: state.count - 3
+    //   }
+    //
+    //   break;
+    // case "INCREMENT_COUNT_5":
+    //   // state = {count: 1}
+    //
+    //   return {
+    //     ...state,
+    //     count: state.count + 5
+    //   }
+    //   break;
+    // case "DECREMENT_COUNT_5":
+    //
+    //   return {
+    //     ...state,
+    //     count: state.count - 5
+    //   }
+    //
+    //   break;
     default:
       return state
   }
@@ -33,12 +65,16 @@ function reducer(state = defaultState, action) {
 
 const store = createStore(reducer)
 
-store.dispatch({ type: 'INCREMENT_COUNT' })
-store.dispatch({ type: 'INCREMENT_COUNT' })
-store.dispatch({ type: 'INCREMENT_COUNT' }) // count: 3
+store.dispatch({ type: 'INCREMENT_COUNT', count: 2 })
+store.dispatch({ type: 'INCREMENT_COUNT', count: 6 })
+store.dispatch({ type: 'INCREMENT_COUNT', count: 1 }) // count: 9
 console.log(store.getState());
-store.dispatch({ type: 'DECREMENT_COUNT' }) // count: 2
+store.dispatch({ type: 'DECREMENT_COUNT', count: 1 }) // count: 8
 console.log(store.getState());
+// store.dispatch({ type: 'DECREMENT_COUNT_3' }) // count: -1
+// store.dispatch({ type: 'INCREMENT_COUNT_5' }) // count: 4
+// console.log(store.getState());
+
 
 /**
 
@@ -61,35 +97,25 @@ Thinking in Redux:
 
 
 class App extends Component {
-  // state = { count: 0 };
-
-  increment = () => {
-    // this.setState(prevState => ({ count: prevState.count + 1 }));
-  };
-
-  decrement = () => {
-    // this.setState(prevState => ({ count: prevState.count - 1 }));
-  };
-
   render() {
     return (
       <div className="App">
-        <Header count={null/*this.state.count*/} />
-        <Counter
-          count={null/*this.state.count*/}
-          increment={null/*this.increment*/}
-          decrement={null/*this.decrement*/}
-        />
+        <Header />
+        <Counter />
       </div>
     );
   }
 }
 
 class Header extends Component {
+  componentDidMount() {
+    store.subscribe(() => this.forceUpdate())
+  }
+
   renderDescription = () => {
-    const remainder = this.props.count % 5;
+    const remainder = store.getState().count % 5;
     const upToNext = 5 - remainder;
-    return `The current count is less than ${this.props.count + upToNext}`;
+    return `The current count is less than ${store.getState().count + upToNext}`;
   };
 
   render() {
@@ -104,12 +130,26 @@ class Header extends Component {
 }
 
 class Counter extends Component {
+  componentDidMount() {
+    store.subscribe(() => this.forceUpdate())
+  }
+
+  increment = () => {
+    store.dispatch({ type: "INCREMENT_COUNT", count: 1 })
+    // this.setState(prevState => ({ count: prevState.count + 1 }));
+  };
+
+  decrement = () => {
+    store.dispatch({ type: "DECREMENT_COUNT", count: 1 })
+    // this.setState(prevState => ({ count: prevState.count - 1 }));
+  };
+
   render() {
     return (
       <div className="Counter">
-        <h1>{this.props.count}</h1>
-        <button onClick={this.props.decrement}> - </button>
-        <button onClick={this.props.increment}> + </button>
+        <h1>{store.getState().count}</h1>
+        <button onClick={this.decrement}> - </button>
+        <button onClick={this.increment}> + </button>
       </div>
     );
   }
