@@ -31,12 +31,12 @@ class App extends React.Component {
       <Switch>
         <Route exact
           path="/messages"
-          render={routerProps => <MessagesPage user={this.state.user} />} />
+          render={routerProps => <MessagesPage user={this.state.user} {...routerProps} />} />
         <Route exact path="/login" component={LoginPage} />
         <Route exact path="/signup" component={SignupPage} />
         <Route exact
           path="/"
-          render={({ location, history, match }) => <IndexPage user={this.state.user} />}
+          render={({ location, history, match }) => <IndexPage user={this.state.user} location={location} />}
         />
       </Switch>
     )
